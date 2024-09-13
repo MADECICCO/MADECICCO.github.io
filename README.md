@@ -1,2 +1,2 @@
 # marceloDeCicco.github.io
-Página pessoal de minhas atividades profissionais, projetos acadêmicos e afins
+Personal page of my professional activities, academic projects and the like
