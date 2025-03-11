@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcelo de Cicco – Astrônomo & Pesquisador</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
+    header h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    header p {
+      text-align: center;
+      font-size: 1.1em;
+    }
+    nav {
+      background: #444;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 10px 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px 0;
+    }
+    section {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 20px;
+    }
+    .section-title {
+      border-bottom: 2px solid #333;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      font-size: 1.5em;
+    }
+    .profile-img {
+      max-width: 200px;
+      border-radius: 50%;
+      display: block;
+      margin: 20px auto;
+    }
+    ul {
+      margin-left: 20px;
+      list-style: disc;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+      font-size: 0.9em;
+    }
+    /* Responsividade */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul li {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container">
+      <h1>Marcelo de Cicco</h1>
+      <p>Astrônomo | Pesquisador em Meteoros e Ciência Cidadã</p>
+    </div>
+  </header>
+
+  <!-- Menu de Navegação -->
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#atuacao">Atuação Profissional</a></li>
+        <li><a href="#publicacoes">Publicações & Pesquisas</a></li>
+        <li><a href="#entrevistas">Entrevistas & Mídia</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seção Inicial -->
+  <section id="home">
+    <div class="container">
+      <!-- Substitua "imags/profile.jpg" pelo caminho da sua imagem de perfil -->
+      <img src="imags/profile.jpg" alt="Marcelo de Cicco" class="profile-img">
+      <h2 class="section-title">Bem-vindo</h2>
+      <p>Esta é a minha página pessoal, onde compartilho minhas atividades profissionais, projetos acadêmicos e contribuições à ciência cidadã, com ênfase no estudo de meteoros e outros fenômenos atmosféricos.</p>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre Marcelo de Cicco</h2>
+      <p>Sou astrônomo e pesquisador com ampla experiência na análise de meteoros, bólidos e fenômenos atmosféricos. Doutor em Ciências Planetárias, atuo como coordenador do <a href="https://exoss.org" target="_blank">Projeto EXOSS</a>, uma iniciativa de ciência cidadã que integra profissionais e entusiastas no monitoramento de eventos espaciais.</p>
+      <p>Conheça mais sobre minha trajetória em meu <a href="https://www.linkedin.com/in/marcelo-decicco" target="_blank">LinkedIn</a> e confira meu <a href="https://lattes.cnpq.br/1234567890123456" target="_blank">Currículo Lattes</a>.</p>
+    </div>
+  </section>
+
+  <!-- Seção Atuação Profissional -->
+  <section id="atuacao">
+    <div class="container">
+      <h2 class="section-title">Atuação Profissional</h2>
+      <p>Minha atuação abrange:</p>
+      <ul>
+        <li>Pesquisa e monitoramento de meteoros e fenômenos atmosféricos.</li>
+        <li>Desenvolvimento de projetos de ciência cidadã, integrando a comunidade científica e o público interessado.</li>
+        <li>Colaboração com o Observatório Nacional e outras instituições de referência.</li>
+        <li>Participação em entrevistas e reportagens, com ampla divulgação em mídias nacionais e internacionais.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Seção Publicações & Pesquisas -->
+  <section id="publicacoes">
+    <div class="container">
+      <h2 class="section-title">Publicações & Pesquisas</h2>
+      <p>Ao longo da minha carreira, publiquei diversos artigos e estudos que abordam temas como:</p>
+      <ul>
+        <li><strong>Previsão de Atividade de Meteoros</strong> – Estudos sobre as condições e previsões para eventos meteóricos.</li>
+        <li><strong>Monitoramento de Meteoros</strong> – Relatórios e análises realizados em parceria com o Projeto EXOSS e o Observatório Nacional.</li>
+        <li><strong>Análise de Fenômenos Atmosféricos</strong> – Pesquisas sobre a reentrada de lixo espacial e suas implicações ambientais.</li>
+      </ul>
+      <p>Confira meu acervo completo de publicações em <a href="https://scholar.google.com/citations?user=XXXX" target="_blank">Google Scholar</a>.</p>
+    </div>
+  </section>
+
+  <!-- Seção Entrevistas & Mídia -->
+  <section id="entrevistas">
+    <div class="container">
+      <h2 class="section-title">Entrevistas & Mídia</h2>
+      <p>Participei de diversas entrevistas e reportagens que discutem temas como meteoros e reentrada de lixo espacial. Destaco alguns trabalhos:</p>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=_hjn4uI3Edc" target="_blank">Entrevista com Professor Estevão Scudese</a> – Debate sobre fenômenos meteóricos e eventos espaciais.</li>
+        <li><a href="https://www.uol.com.br/tilt/noticias/redacao/2025/02/24/meteoro-de-lixo-luzes-no-ceu-foram-registradas-na-regiao-nordeste.htm" target="_blank">Reportagem: Meteoro de Lixo</a> – Análise sobre a reentrada de lixo espacial.</li>
+        <li><a href="https://www.cnnbrasil.com.br/nacional/video-meteoro-e-visto-no-ceu-do-ceara-entenda-a-causa-do-fenomeno/" target="_blank">Vídeo: Fenômeno no Ceará</a> – Cobertura de eventos meteóricos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title">Contato</h2>
+      <p>Para entrar em contato, envie um e-mail para: <a href="mailto:contato@marcelodecicco.com.br">contato@marcelodecicco.com.br</a></p>
+      <p>Ou conecte-se comigo através das redes sociais:</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/marcelo-decicco" target="_blank">LinkedIn</a></li>
+        <li><a href="https://twitter.com/deciccoastronomer" target="_blank">Twitter</a></li>
+        <li><a href="https://www.instagram.com/deciccoastronomer" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Marcelo de Cicco. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
