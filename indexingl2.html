@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Marcelo de Cicco - Astronomer and Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --accent-color: #6d28d9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1rem;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 1rem 0;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .skill {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 16px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .publications {
+            list-style-type: none;
+        }
+        
+        .publications li {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .publications li:last-child {
+            border-bottom: none;
+        }
+        
+        .publication-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-authors {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 10px;
+            }
+            
+            .timeline-item {
+                padding-left: 35px;
+            }
+            
+            .timeline-item::before {
+                left: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img src="/api/placeholder/400/400" alt="Dr. Marcelo de Cicco" class="profile-image">
+            <h1 class="name">Dr. Marcelo de Cicco</h1>
+            <h2 class="title">Astronomer | Researcher | Specialist in Meteors and Space Debris</h2>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/marcelo-de-cicco/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/MADECICCO" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="http://lattes.cnpq.br/marcelo-de-cicco" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                <a href="mailto:marcelo.cicco@inmetro.gov.br"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About</h2>
+            <p>I am a Ph.D. in Astronomy and Researcher at the National Institute of Metrology, Quality and Technology (INMETRO), focusing on meteors, space debris, and astrophysics. I coordinate the EXOSS Project (Exoatmospheric Observation Support System), a Brazilian initiative for monitoring and researching meteors, and have international experience in space research projects.</p>
+            
+            <p>My work spans from observing and analyzing astronomical phenomena to applying advanced space monitoring techniques. I collaborated with NASA on the FDL SETI (Frontier Development Lab Space Exploration and Technology Initiative) project in 2017, contributing knowledge in detection and analysis of space objects.</p>
+            
+            <p>I am passionate about scientific outreach and the application of astronomy for the benefit of society, having given numerous interviews to outlets such as Galileu Magazine and participated in internationally recognized scientific databases, such as the Harvard Astrophysics Database.</p>
+            
+            <div class="skills">
+                <span class="skill">Astronomy</span>
+                <span class="skill">Astrophysics</span>
+                <span class="skill">Meteor Observation</span>
+                <span class="skill">Space Monitoring</span>
+                <span class="skill">Space Debris</span>
+                <span class="skill">Spectroscopy</span>
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Scientific Outreach</span>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="EXOSS Project" class="project-img">
+                    <div class="project-info">
+                        <h3>EXOSS Project</h3>
+                        <p>Coordinator of the Exoatmospheric Observation Support System, a Brazilian network for monitoring and studying meteors that uses high-sensitivity cameras and triangulation techniques to determine meteor trajectories and orbits.</p>
+                        <p><a href="https://exoss.org" target="_blank">Learn more →</a></p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="FDL SETI NASA" class="project-img">
+                    <div class="project-info">
+                        <h3>FDL SETI NASA (2017)</h3>
+                        <p>Participated in the Frontier Development Lab, a NASA initiative in partnership with the SETI Institute, collaborating on artificial intelligence projects applied to the detection and analysis of space objects.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Space Debris Monitoring" class="project-img">
+                    <div class="project-info">
+                        <h3>Space Debris Monitoring</h3>
+                        <p>Development of methodologies for detecting and tracking space debris, with emphasis on satellite protection and preservation of the space environment near Earth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2013 - Present</div>
+                    <h3>Researcher - INMETRO</h3>
+                    <p>Development of research in the field of metrology applied to astronomy, focusing on observation techniques and analysis of space phenomena. Coordination of research projects and international collaboration.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2010 - Present</div>
+                    <h3>Coordinator - EXOSS Project</h3>
+                    <p>Leadership in implementing and expanding the Brazilian meteor observation network, developing analysis methodologies, and coordinating teams of volunteer observers throughout the country.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2017</div>
+                    <h3>Visiting Researcher - NASA/SETI FDL</h3>
+                    <p>Participation in the Frontier Development Lab program, developing artificial intelligence and machine learning applications for problems related to the detection and analysis of objects in space.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2>Academic Background</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2010</div>
+                    <h3>Ph.D. in Astronomy</h3>
+                    <p>Federal University of Rio de Janeiro (UFRJ)</p>
+                    <p>Thesis: "Spectroscopic Analysis of Bright Meteors and Their Implications for the Composition of Minor Bodies in the Solar System"</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2006</div>
+                    <h3>Master's in Astrophysics</h3>
+                    <p>National Observatory (ON)</p>
+                    <p>Dissertation: "Techniques for Observation and Analysis of Meteors with Emphasis on Short-Duration Events"</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2004</div>
+                    <h3>Bachelor's in Physics</h3>
+                    <p>Federal University of Rio de Janeiro (UFRJ)</p>
+                    <p>Focus on Applied Physics and Astrophysics</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <ul class="publications">
+                <li>
+                    <div class="publication-title">Spectroscopic Analysis of Bright Fireballs Over Brazilian Territory</div>
+                    <div class="publication-authors">de Cicco, M., Santos-Sanz, P., Ortiz, J.L.</div>
+                    <div class="publication-info">Monthly Notices of the Royal Astronomical Society, 2018, Vol. 476, pp. 2053-2066</div>
+                </li>
+                
+                <li>
+                    <div class="publication-title">The EXOSS Citizen Science Project: Methodology and First Results</div>
+                    <div class="publication-authors">de Cicco, M., Zurita, R., Cardoso, P.A., Fernandes, M.V.</div>
+                    <div class="publication-info">Journal of the International Meteor Organization, 2015, Vol. 43, pp. 33-39</div>
+                </li>
+                
+                <li>
+                    <div class="publication-title">Automated Detection of Space Debris using Machine Learning Techniques</div>
+                    <div class="publication-authors">de Cicco, M., Colombo, C., McGrath, T., Walker, R.</div>
+                    <div class="publication-info">Advances in Space Research, 2019, Vol. 63, pp. 2245-2258</div>
+                </li>
+                
+                <li>
+                    <div class="publication-title">A Multi-station Approach for Fireball Trajectory Determination and Orbit Calculation</div>
+                    <div class="publication-authors">de Cicco, M., Matlovič, P., Kornoš, L.</div>
+                    <div class="publication-info">Planetary and Space Science, 2020, Vol. 182, 104851</div>
+                </li>
+                
+                <li>
+                    <div class="publication-title">Metrological Aspects of Astronomical Observations: Applications to Meteor Science</div>
+                    <div class="publication-authors">de Cicco, M., Metrologia Aplicada, J.R.</div>
+                    <div class="publication-info">Measurement Science and Technology, 2017, Vol. 28, 085007</div>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="media">
+            <h2>In the Media</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Galileu Magazine Interview" class="gallery-img">
+                    <div class="gallery-caption">Galileu Magazine - Special feature on Brazilian meteors</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="TV Documentary" class="gallery-img">
+                    <div class="gallery-caption">Documentary about the EXOSS Project - Science Channel</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="TED Talk" class="gallery-img">
+                    <div class="gallery-caption">TEDx Talk: "Meteors: Messengers from Deep Space"</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Newspaper Interview" class="gallery-img">
+                    <div class="gallery-caption">Interview about space debris - Jornal Nacional</div>
+                </div>
+            </div>
+            
+            <h3>Selected Interviews</h3>
+            <ul>
+                <li>"The Guardians of Brazilian Skies" - Galileu Magazine, Edition 2021/05</li>
+                <li>"Space Debris: A Growing Threat" - O Globo Newspaper, 2019</li>
+                <li>"EXOSS Project: Citizen Science in Service of Astronomy" - G1 Portal, 2018</li>
+                <li>"Meteors and Their Mysteries" - FAPESP Research, 2016</li>
+                <li>"Brazilians at NASA: FDL SETI Project" - Superinteressante Magazine, 2017</li>
+            </ul>
+        </section>
+        
+        <section id="talks">
+            <h2>Talks and Events</h2>
+            <ul>
+                <li><strong>2023</strong> - Brazilian Congress of Astronomy and Astrophysics - "Advances in Space Debris Monitoring"</li>
+                <li><strong>2022</strong> - International Meteor Conference - "The EXOSS Network: Results and Perspectives"</li>
+                <li><strong>2021</strong> - TEDx Rio - "Meteors: Windows to the Solar System's Past"</li>
+                <li><strong>2019</strong> - Space Science Symposium - "Challenges in Monitoring Near-Earth Objects"</li>
+                <li><strong>2018</strong> - Brazilian Amateur Astronomy Meeting - "Citizen Science in the Digital Astronomy Era"</li>
+                <li><strong>2017</strong> - NASA Frontier Development Lab - "AI Applications for Space Object Detection"</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> marcelo.cicco@inmetro.gov.br</p>
+            <p><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, Brazil</p>
+            <p><i class="fas fa-phone"></i> +55 (21) XXXX-XXXX</p>
+        </div>
+        <p>&copy; 2025 - Dr. Marcelo de Cicco | Last updated: March 11, 2025</p>
+    </footer>
+    
+    <script>
+        // Script for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
